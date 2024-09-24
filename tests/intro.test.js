@@ -1,6 +1,6 @@
 import { describe, test, it, expect } from "vitest";
 
-import { max } from "../src/intro";
+import { fizzBuzz, max } from "../src/intro";
 
 // Example of testing pattern:
 // describe("max", () => {
@@ -29,5 +29,23 @@ describe("max", () => {
 
   it("should return the first argument if arguments are equal", () => {
     expect(max(1, 1)).toBe(1);
+  });
+});
+
+describe("fizzbuzz", () => {
+  it("should return FizzBuzz if argument is divisible by three and five", () => {
+    expect(fizzBuzz(15)).toBe("FizzBuzz");
+  });
+
+  it("should return fizz if argument is divisible by three", () => {
+    expect(fizzBuzz(3)).toBe("Fizz");
+  });
+
+  it("should return buzz if argument is divisible by five", () => {
+    expect(fizzBuzz(5)).toBe("Buzz");
+  });
+
+  it("should return a string version of the argument if it's not divisible by either three or five", () => {
+    expect(fizzBuzz(1)).toBe("1");
   });
 });
